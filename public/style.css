@@ -1,0 +1,101 @@
+.App {
+  width: 1140px;
+  margin: 0 auto;
+}
+.App p {
+  font-size: 16px;
+}
+h1 {
+  text-align: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.header {
+  width: 100%;
+}
+.header-username {
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 15px;
+}
+.reglament {
+  width: 49%;
+}
+.registration {
+  width: 50%;
+}
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 20px;
+}
+.registration-form input,
+.registration-form button {
+  margin: 15px 0;
+  padding: 5px;
+  width: 80%;
+  display: block;
+}
+.registration-list {
+  width: 90%;
+  margin: 0 auto;
+}
+.registration-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.registration-list-item .cell {
+  width: 40%;
+  border: 1px solid #555;
+  margin: 3px;
+  padding: 7px;
+  text-align: center;
+}
+.registration-list-item .cell:nth-last-child(1) {
+  width: 20%;
+}
+.registration table {
+  width: 90%;
+}
+.registration table td {
+  width: 40%;
+  border: 1px solid #555;
+  margin: 3px;
+  padding: 7px;
+  text-align: center;
+}
+.registration table td:nth-last-child(1) {
+  width: 20%;
+}
+#vk_auth {
+  width: 100% !important;
+  height: 70vh !important;
+  display: flex;
+}
+#vk_auth iframe {
+  margin: auto;
+}
+@media (max-width: 550px) {
+  .row {
+    flex-direction: column;
+  }
+  .App {
+    width: 100%;
+    font-size: 12px;
+  }
+  .reglament,
+  .registration {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .registration-form {
+    width: 100%;
+  }
+}
