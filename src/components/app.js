@@ -9,9 +9,10 @@ function App(props) {
         console.log(_user);
     };
     console.log(user);
-    const content = user ? 
-            <MainPage user={user} onAuth={onAuth} db={props.db} />: 
-            <Login onAuth={onAuth} /> ;
+    const content = //user ? 
+            <MainPage user={user} onAuth={onAuth} db={props.db} />
+             
+  //          <Login onAuth={onAuth} /> ;
 
     return (
         <div className="App">

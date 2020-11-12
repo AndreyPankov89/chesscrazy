@@ -21,6 +21,9 @@ class Database{
     addUser = (user)=>{
         this.database.ref('registred/'+user.uid).set(user);
     }
+    addMembers = (users)=>{
+        this.database.ref('members').set(users);
+    }
     setCounter = (counter)=>{
         this.database.ref('counter').set(counter);
     }
@@ -30,14 +33,34 @@ class Database{
         .then( shs=> {data=shs.val()||{}; })
         
         return data
+    }     
+    getMembers = async()=>{
+        let data; 
+        await this.database.ref('members').once('value')
+        .then( shs=> {data=shs.val()||{}; })
+        
+        return data
     }
     getCounter = async()=>{
         let data; 
-        await this.database.ref('counter').once('value')
+        await this.database.ref('drawing').once('value')
         .then( shs=> {data=shs.val()})
         
         return data
     }
+    
+    getDrawing = async()=>{
+        let data; 
+        await this.database.ref('drawing').once('value')
+        .then( shs=> {data=shs.val()})
+        
+        return data
+    }
+
+    setDrawing = async (drawing)=>{
+        this.database.ref('drawing').set(drawing);
+    }
+
 
 }
 export default Database;

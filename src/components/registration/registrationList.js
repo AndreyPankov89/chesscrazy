@@ -5,7 +5,7 @@ const RegistrationList = (props)=>{
     const {users} = props;
     console.log(users);
     
-    const rows = users ? users.map((item,i) => { return (<RegistrationListItem user={item} key={i}/>)}):null;
+    const rows = users ? users.map((item,i) => { return (<RegistrationListItem user={item} keyz={i} key={i}/>)}):null;
     return (
         // <div className="registration-list">
         //     {rows}

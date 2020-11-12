@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RegistrationListItem = (props)=>{
-    const {user} = props;
+    const {user, keyz} = props;
 
     return (
    /*     <div className="registration-list-item">
@@ -17,6 +17,9 @@ const RegistrationListItem = (props)=>{
         </div>
       */
      <tr>
+         <td>
+             {keyz+1}
+         </td>
          <td><a href={`https://vk.com/id${user.uid}`}>
                 {user.name}    
             </a></td>

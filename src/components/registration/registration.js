@@ -7,7 +7,7 @@ const Registration = (props)=>{
     const {db}=props;
 
     useEffect(()=>{     
-        db.getUsers()
+        db.getMembers()
             .then((dbusers=>{console.log(dbusers.values);
              setRegisteredUsers(Object.values(dbusers)) }));
     },[])
@@ -33,7 +33,7 @@ const Registration = (props)=>{
     
     return (
         <div className="registration">
-            <RegistrationForm user={props.user} addUser={addUser}/>
+            {/*<RegistrationForm user={props.user} addUser={addUser}/>*/}
             <RegistrationList users={registeredUsers}/>
         </div>
         

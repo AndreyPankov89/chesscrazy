@@ -5,8 +5,17 @@
 .App p {
   font-size: 16px;
 }
-h1 {
+h1,
+h3 {
   text-align: center;
+}
+h3 {
+  font-size: 36px;
+}
+a {
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 .row {
   display: flex;
@@ -58,7 +67,7 @@ h1 {
   padding: 7px;
   text-align: center;
 }
-.registration-list-item .cell:nth-last-child(1) {
+.registration-list-item .cell:nth-last-child(2) {
   width: 20%;
 }
 .registration table {
@@ -72,7 +81,37 @@ h1 {
   text-align: center;
 }
 .registration table td:nth-last-child(1) {
-  width: 20%;
+  width: 100px;
+}
+.registration table td:nth-child(1) {
+  width: 55px;
+}
+.tour-table {
+  margin: 0 auto;
+  width: 80%;
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid #777;
+  background-color: #555;
+}
+.tour-table td {
+  border: 1px solid #777;
+  text-align: center;
+  line-height: 1.8;
+}
+.tour-table td:nth-child(3),
+.tour-table td:nth-child(5) {
+  width: 90px;
+}
+.tour-table tr:nth-child(odd) {
+  background-color: aqua;
+}
+.tour-table tr:nth-child(even) {
+  background-color: aquamarine;
+}
+.tour-table tr:nth-child(1) {
+  font-weight: 700;
+  background-color: #fff;
 }
 #vk_auth {
   width: 100% !important;
