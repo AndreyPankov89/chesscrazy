@@ -10,7 +10,8 @@ const Header = (props)=>{
             <h1 >
                 <Link to="/">Осенний марафон 2020 NEXT</Link>
             </h1>
-            <Link to="/reglament"> Регламент и список участников</Link>
+            <Link to="/reglament" className="header-link"> Регламент и список участников</Link> | 
+            <Link to="/table" className="header-link">Турнирная таблица</Link>
         </header>
     )
 }

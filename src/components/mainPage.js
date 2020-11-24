@@ -2,14 +2,26 @@ import React, { useState, useEffect} from 'react';
 import Header from './header';
 import RegPage from './registration/regPage';
 import SingleTourPage from './singleTourPage';
-import DrawingPage from './drawingPage'
+import DrawingPage from './drawingPage';
+import TournamentTable from './tournamentTable';
 import {drawingGenerate} from '../drawingGenerate';
 import { BrowserRouter as Router, Switch, Route,Link} from "react-router-dom";
 
 const MainPage = (props)=>{
     const {user,onAuth,db}=props;
-    const [drawing, setDrawing] = useState(null)
-    const [members, setMembers] = useState(null)
+    const [drawing, setDrawing] = useState(null);
+    const [members, setMembers] = useState(null);
+    const setResults = ((tour,pair,item, ws,bs)=>{
+        db.setResultsToDrawing(tour,pair,item );
+        const white = members[item.white-1];
+        white.results[item.black-1]=ws;
+        const black = members[item.black-1]
+        black.results[item.white-1] = bs;
+        console.log(item);
+        
+        db.setResultsToMembers(item.white-1,white);
+        db.setResultsToMembers(item.black-1,black);
+    })
     useEffect(()=>{
         db.getMembers()
             .then((res)=>{
@@ -23,7 +35,6 @@ const MainPage = (props)=>{
             })
     },[db])
 
-    
     return(
         <Router>
             <div className="container">
@@ -32,10 +43,15 @@ const MainPage = (props)=>{
                     <Route path='/reglament'>
                         <RegPage user={user} db={db}/>  
                     </Route>
-                    <Route path='/drawing'>
+                    <Route path='/table'>
+                        <TournamentTable members={members}/>
                     </Route>
                     <Route path='/tour/:tourId'>
-                        <SingleTourPage drawing={drawing} members={members}/>
+                        <SingleTourPage 
+                            drawing={drawing} 
+                            members={members}
+                            setResults={setResults}
+                            />
                     </Route>
                     <Route path="/">
 {/*                         
@@ -60,7 +76,10 @@ const MainPage = (props)=>{
                                 console.log(regusers2);
                             }));
                         }}>ttttt</button> */}
-                        <DrawingPage drawing={drawing} members={members}/> 
+                        <DrawingPage 
+                            drawing={drawing} 
+                            members={members} 
+                            setResults={setResults}/> 
                     </Route>
                 </Switch>
                          

@@ -4,11 +4,15 @@ import SingleTour from './singleTour'
 const SingleTourPage = (props)=>{
 
     const {tourId} = useParams();
-    const {drawing,members} = props;
+    const {drawing,members,setResults} = props;
     const tourDrawing = drawing?Object.entries(drawing)[tourId-1][1]:[];
     
     return(
-        <SingleTour tourId={tourId} drawing={tourDrawing} members={members}/>
+        <SingleTour 
+            tourId={tourId} 
+            drawing={tourDrawing} 
+            members={members}
+            setResults={setResults}/>
     )
 
 }

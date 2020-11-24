@@ -29,6 +29,11 @@ a {
   display: inline-block;
   margin-right: 15px;
 }
+.header-link {
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 25px;
+}
 .reglament {
   width: 49%;
 }
@@ -113,6 +118,66 @@ a {
   font-weight: 700;
   background-color: #fff;
 }
+.form-group {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-group input,
+.form-group textarea {
+  width: 270px;
+}
+.dialog {
+  height: 200px;
+  width: 450px;
+  background-color: #fff;
+}
+.dialog form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.dialog-wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(200, 200, 200, 0.7);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.tournament-table {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid #777;
+}
+.tournament-table td {
+  border: 1px solid #777;
+  text-align: center;
+  line-height: 1.4;
+  width: 25px;
+}
+.tournament-table td:nth-child(2) {
+  width: 190px;
+}
+.tournament-table td.dark {
+  background-color: #000;
+}
+.tournament-table td.hide {
+  display: none;
+}
+.tournament-table.hide {
+  width: 40%;
+}
 #vk_auth {
   width: 100% !important;
   height: 70vh !important;
@@ -120,6 +185,47 @@ a {
 }
 #vk_auth iframe {
   margin: auto;
+}
+.switch {
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  width: 30px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+.slider:before {
+  background-color: #fff;
+  bottom: 1px;
+  content: "";
+  height: 16px;
+  left: 2px;
+  position: absolute;
+  transition: 0.4s;
+  width: 16px;
+}
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+input:checked + .slider:before {
+  transform: translateX(12px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
 }
 @media (max-width: 550px) {
   .row {

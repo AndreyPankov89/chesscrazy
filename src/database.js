@@ -43,12 +43,19 @@ class Database{
     }
     getCounter = async()=>{
         let data; 
-        await this.database.ref('drawing').once('value')
+        await this.database.ref('counter').once('value')
         .then( shs=> {data=shs.val()})
         
         return data
     }
-    
+    setResultsToDrawing = async(tour,pair,item)=>{
+        this.database.ref(`drawing/${tour-1}/${pair}`).set(item)
+    }
+    setResultsToMembers = async(memberID,member)=>{
+        console.log(memberID,member);
+        
+        this.database.ref(`members/${memberID}`).set(member)
+    }
     getDrawing = async()=>{
         let data; 
         await this.database.ref('drawing').once('value')
